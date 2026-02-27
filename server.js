@@ -225,7 +225,7 @@ app.post('/v1/chat/completions', async (req, res) => {
     });
   }
 });
-app.get('/', (req, res) => {
+app.all('/', (req, res) => {
   res.json({ status: 'ok', service: 'OpenAI to NVIDIA NIM Proxy' });
 });
 
