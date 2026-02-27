@@ -18,7 +18,7 @@ const MODEL_MAPPING = {
   'gpt-3.5-turbo': 'deepseek-ai/deepseek-v3.2',
   'gpt-4': 'deepseek-ai/deepseek-v3.2',
   'gpt-4-turbo': 'deepseek-ai/deepseek-v3.2',
-  'gpt-4o': 'deepseek-ai/deepseek-v3.2',
+  'gpt-4o': 'meta/llama-3.3-70b-instruct',
   'claude-3-opus': 'deepseek-ai/deepseek-v3.2',
   'claude-3-sonnet': 'deepseek-ai/deepseek-v3.2',
   'gemini-pro': 'deepseek-ai/deepseek-v3.2'
