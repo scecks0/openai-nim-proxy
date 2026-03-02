@@ -54,7 +54,8 @@ app.post('/v1/chat/completions', async (req, res) => {
       temperature: temperature || 0.6,
       top_p: 0.95,
       max_tokens: max_tokens || 8192,
-      stream: stream || false
+      stream: false
+
     };
 
     const response = await axios.post(`${NIM_API_BASE}/chat/completions`, nimRequest, {
