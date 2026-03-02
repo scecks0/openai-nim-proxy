@@ -48,15 +48,16 @@ app.post('/v1/chat/completions', async (req, res) => {
 
     const nimModel = MODEL_MAPPING[model] || 'deepseek-ai/deepseek-r1-distill-qwen-32b';
 
-    const nimRequest = {
+const nimRequest = {
       model: nimModel,
       messages: messages,
       temperature: temperature || 0.6,
       top_p: 0.95,
       max_tokens: max_tokens || 8192,
-      stream: false
-
+      stream: false,
+      extra_body: { chat_template_kwargs: { thinking: false } }
     };
+
 
     const response = await axios.post(`${NIM_API_BASE}/chat/completions`, nimRequest, {
       headers: {
