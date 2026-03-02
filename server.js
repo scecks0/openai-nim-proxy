@@ -14,15 +14,17 @@ const NIM_API_KEY = process.env.NIM_API_KEY;
 const SHOW_REASONING = false;
 
 const MODEL_MAPPING = {
-  'deepseek': 'deepseek-ai/deepseek-v3.2',
-  'gpt-3.5-turbo': 'deepseek-ai/deepseek-v3.2',
-  'gpt-4': 'deepseek-ai/deepseek-v3.2',
-  'gpt-4-turbo': 'deepseek-ai/deepseek-v3.2',
-  'gpt-4o': 'meta/llama-3.3-70b-instruct',
-  'claude-3-opus': 'deepseek-ai/deepseek-v3.2',
-  'claude-3-sonnet': 'deepseek-ai/deepseek-v3.2',
-  'gemini-pro': 'deepseek-ai/deepseek-v3.2'
+  const MODEL_MAPPING = {
+  'deepseek': 'deepseek-ai/deepseek-r1-distill-qwen-32b',
+  'gpt-3.5-turbo': 'deepseek-ai/deepseek-r1-distill-qwen-32b',
+  'gpt-4': 'deepseek-ai/deepseek-r1-distill-qwen-32b',
+  'gpt-4-turbo': 'deepseek-ai/deepseek-r1-distill-qwen-32b',
+  'gpt-4o': 'deepseek-ai/deepseek-r1-distill-qwen-32b',
+  'claude-3-opus': 'deepseek-ai/deepseek-r1-distill-qwen-32b',
+  'claude-3-sonnet': 'deepseek-ai/deepseek-r1-distill-qwen-32b',
+  'gemini-pro': 'deepseek-ai/deepseek-r1-distill-qwen-32b'
 };
+
 
 app.all('/', (req, res) => {
   res.json({ status: 'ok', service: 'OpenAI to NVIDIA NIM Proxy' });
