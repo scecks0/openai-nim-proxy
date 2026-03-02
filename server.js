@@ -14,7 +14,6 @@ const NIM_API_KEY = process.env.NIM_API_KEY;
 const SHOW_REASONING = false;
 
 const MODEL_MAPPING = {
-  const MODEL_MAPPING = {
   'deepseek': 'deepseek-ai/deepseek-r1-distill-qwen-32b',
   'gpt-3.5-turbo': 'deepseek-ai/deepseek-r1-distill-qwen-32b',
   'gpt-4': 'deepseek-ai/deepseek-r1-distill-qwen-32b',
@@ -24,7 +23,6 @@ const MODEL_MAPPING = {
   'claude-3-sonnet': 'deepseek-ai/deepseek-r1-distill-qwen-32b',
   'gemini-pro': 'deepseek-ai/deepseek-r1-distill-qwen-32b'
 };
-
 
 app.all('/', (req, res) => {
   res.json({ status: 'ok', service: 'OpenAI to NVIDIA NIM Proxy' });
@@ -48,12 +46,12 @@ app.post('/v1/chat/completions', async (req, res) => {
   try {
     const { model, messages, temperature, max_tokens, stream } = req.body;
 
-    let nimModel = MODEL_MAPPING[model] || 'deepseek-ai/deepseek-v3.2';
+    const nimModel = MODEL_MAPPING[model] || 'deepseek-ai/deepseek-r1-distill-qwen-32b';
 
     const nimRequest = {
       model: nimModel,
       messages: messages,
-      temperature: temperature || 1,
+      temperature: temperature || 0.6,
       top_p: 0.95,
       max_tokens: max_tokens || 8192,
       stream: stream || false
