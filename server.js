@@ -12,14 +12,14 @@ const NIM_API_BASE = process.env.NIM_API_BASE || 'https://integrate.api.nvidia.c
 const NIM_API_KEY = process.env.NIM_API_KEY;
 
 const MODEL_MAPPING = {
-  'deepseek': 'deepseek-ai/deepseek-v3.1',
-  'gpt-3.5-turbo': 'deepseek-ai/deepseek-v3.1',
-  'gpt-4': 'deepseek-ai/deepseek-v3.1',
-  'gpt-4-turbo': 'deepseek-ai/deepseek-v3.1',
-  'gpt-4o': 'deepseek-ai/deepseek-v3.1',
-  'claude-3-opus': 'deepseek-ai/deepseek-v3.1',
-  'claude-3-sonnet': 'deepseek-ai/deepseek-v3.1',
-  'gemini-pro': 'deepseek-ai/deepseek-v3.1'
+  'deepseek': 'meta/llama-3.3-70b-instruct',
+  'gpt-3.5-turbo': 'meta/llama-3.3-70b-instruct',
+  'gpt-4': 'meta/llama-3.3-70b-instruct',
+  'gpt-4-turbo': 'meta/llama-3.3-70b-instruct',
+  'gpt-4o': 'meta/llama-3.3-70b-instruct',
+  'claude-3-opus': 'meta/llama-3.3-70b-instruct',
+  'claude-3-sonnet': 'meta/llama-3.3-70b-instruct',
+  'gemini-pro': 'meta/llama-3.3-70b-instruct'
 };
 
 app.all('/', (req, res) => {
@@ -43,8 +43,8 @@ app.get('/v1/models', (req, res) => {
 app.post('/v1/chat/completions', async (req, res) => {
   console.log('Incoming request - Model:', req.body.model);
   try {
-    const { model, messages, temperature, max_tokens } = req.body;
-    const nimModel = MODEL_MAPPING[model] || 'deepseek-ai/deepseek-v3.1';
+    const { model, messages } = req.body;
+    const nimModel = MODEL_MAPPING[model] || 'meta/llama-3.3-70b-instruct';
     console.log('Mapped to:', nimModel);
 
     const nimRequest = {
