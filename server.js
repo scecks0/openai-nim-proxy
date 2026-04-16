@@ -14,7 +14,7 @@ const NIM_API_KEY = process.env.NIM_API_KEY;
 const SHOW_REASONING = false;
 
 const MODEL_MAPPING = {
-  'deepseek': 'qwen/qwen3-next-80b-a3b-instruct',
+  'deepseek': 'moonshotai/kimi-k2.5',
   'gpt-3.5-turbo': 'deepseek-ai/deepseek-v3.2',
   'gpt-4': 'moonshotai/kimi-k2.5',
   'gpt-4-turbo': 'deepseek-ai/deepseek-v3.2',
