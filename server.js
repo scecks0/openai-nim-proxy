@@ -14,9 +14,9 @@ const NIM_API_KEY = process.env.NIM_API_KEY;
 const SHOW_REASONING = false;
 
 const MODEL_MAPPING = {
-  'deepseek': 'moonshotai/kimi-k2.5',
+  'deepseek': 'moonshotai/kimi-k2.6',
   'gpt-3.5-turbo': 'deepseek-ai/deepseek-v3.2',
-  'gpt-4': 'moonshotai/kimi-k2.5',
+  'gpt-4': 'moonshotai/kimi-k2.6',
   'gpt-4-turbo': 'deepseek-ai/deepseek-v3.2',
   'gpt-4o': 'meta/llama-3.3-70b-instruct',
   'claude-3-opus': 'deepseek-ai/deepseek-v3.2',
@@ -53,7 +53,7 @@ app.post('/v1/chat/completions', async (req, res) => {
       messages: messages,
       temperature: temperature || 1,
       top_p: 0.95,
-      max_tokens: max_tokens || 8192,
+      max_tokens: max_tokens || 1634,
       stream: stream || false
     };
 
